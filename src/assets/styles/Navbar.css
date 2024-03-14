@@ -1,0 +1,25 @@
+.navbar-wrapper {
+  height: 50px;
+  background-color: #b0d3ff;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  font-weight: 700;
+  color: #112a46;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+.active {
+  background-color: #b0faff;
+}
+
+.nav-link {
+  display: block;
+  width: 33vw;
+  text-align: center;
+}
