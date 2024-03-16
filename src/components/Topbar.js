@@ -1,8 +1,10 @@
 import { useRef, useContext, useState } from "react";
 import { AppContext } from "../context/AppContext";
-import "../assets/styles/Size.css";
+import "../assets/styles/Topbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMaximize } from "@fortawesome/free-solid-svg-icons";
 
-const Size = () => {
+const Topbar = () => {
   const heightInput = useRef();
   const widthInput = useRef();
   const { dispatch } = useContext(AppContext);
@@ -10,7 +12,7 @@ const Size = () => {
   const handleReset = () => {
     const h = parseInt(heightInput.current.value);
     const w = parseInt(widthInput.current.value);
-    if (h > 40 || w > 40 || h < 3 || w < 3) {
+    if (isNaN(h) || isNaN(w) || h > 40 || w > 40 || h < 3 || w < 3) {
       setShowError(true);
       return;
     }
@@ -47,7 +49,7 @@ const Size = () => {
           ></input>
         </div>
         <button id="reset-button" onClick={handleReset}>
-          Reset
+          Reset Size <FontAwesomeIcon icon={faMaximize} />
         </button>
       </div>
       {showError && (
@@ -57,4 +59,4 @@ const Size = () => {
   );
 };
 
-export default Size;
+export default Topbar;

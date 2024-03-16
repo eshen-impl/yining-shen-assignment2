@@ -8,13 +8,13 @@
 
 #reset-button {
   cursor: pointer;
-  background-color: #b0d3ff;
+  background-color: #eee;
   border: 1px solid black;
   border-radius: 5px;
 }
 
 #reset-button:active {
-  background-color: #b0faff;
+  background-color: white;
 }
 
 .error {

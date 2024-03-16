@@ -3,7 +3,7 @@ import "../assets/styles/Cell.css";
 const Cell = (props) => {
   return (
     <div className={`square`} onClick={props.handleClick}>
-      {props.status}
+      <span className="status">{props.status}</span>
     </div>
   );
 };

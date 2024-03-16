@@ -1,11 +1,13 @@
-import Size from "../components/Size";
+import Topbar from "../components/Topbar";
 import Grid from "../components/Grid";
+import Bottombar from "../components/Bottombar";
 
 const Gameboard = () => {
   return (
     <div>
-      <Size />
+      <Topbar />
       <Grid />
+      <Bottombar />
     </div>
   );
 };
