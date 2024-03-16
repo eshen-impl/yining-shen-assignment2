@@ -1,0 +1,38 @@
+.grid-wrapper {
+  margin: 0 auto;
+  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-row {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  border-right: 1px gray solid;
+}
+
+.w {
+  width: 40vw;
+}
+
+.h {
+  height: 2vh;
+}
+
+@media screen and (max-width: 992px) {
+  .w {
+    width: 70vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .w {
+    width: 90vw;
+  }
+  .h {
+    height: 1.5vh;
+  }
+}

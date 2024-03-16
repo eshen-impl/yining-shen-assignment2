@@ -1,0 +1,26 @@
+.size-bar {
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+  max-width: 90vw;
+  margin: 5px auto;
+}
+
+#reset-button {
+  cursor: pointer;
+  background-color: #b0d3ff;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#reset-button:active {
+  background-color: #b0faff;
+}
+
+.error {
+  color: red;
+  width: 500px;
+  max-width: 90vw;
+  margin: -4px auto 2px;
+  text-align: center;
+}
