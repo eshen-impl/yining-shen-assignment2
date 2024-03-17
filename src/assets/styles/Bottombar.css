@@ -24,10 +24,22 @@
 #progress {
   cursor: pointer;
   border-radius: 5px;
-  background-color: #b0d3ff;
+  background-color: #eee;
   border: 1px solid black;
 }
 
 #progress:active {
+  background-color: white;
+}
+
+#autoplay {
+  width: 90px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #b0d3ff;
+  border: 1px solid black;
+}
+
+#autoplay:active {
   background-color: #b0faff;
 }

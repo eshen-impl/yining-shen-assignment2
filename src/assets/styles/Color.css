@@ -1,0 +1,25 @@
+.color-bar {
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+  max-width: 90vw;
+  margin: 5px auto;
+}
+
+.color-picker {
+  border-radius: 50%;
+  height: 18px;
+  width: 20px;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.color-picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}

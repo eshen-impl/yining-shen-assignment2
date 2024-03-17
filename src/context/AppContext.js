@@ -6,6 +6,8 @@ export const AppContext = createContext();
 export const AppProvider = (props) => {
   const initialState = {
     board: [],
+    aliveColor: "#112a46",
+    deadColor: "#F6F5F5",
   };
 
   const [state, dispatch] = useReducer(AppReducer, initialState);
@@ -27,6 +29,8 @@ export const AppProvider = (props) => {
         height: state.height,
         width: state.width,
         alive: state.alive,
+        aliveColor: state.aliveColor,
+        deadColor: state.deadColor,
         dispatch,
       }}
     >
