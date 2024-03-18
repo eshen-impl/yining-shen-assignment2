@@ -1,0 +1,42 @@
+.author-card {
+  width: 30%;
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 22px;
+  box-sizing: border-box;
+  margin: 50px auto;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .author-card {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .author-card {
+    width: 80%;
+  }
+}
+
+.author-card .name {
+  font-size: 20px;
+  color: #000;
+  font-weight: 400;
+  margin-top: 0;
+}
+
+.author-card .avatar-wrapper {
+  width: 25%;
+  margin: 20px auto;
+}
+
+.author-card img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 600px) {
+}

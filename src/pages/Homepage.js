@@ -1,5 +1,7 @@
+import Rule from "../components/Rule";
+
 const Homepage = () => {
-  return <div>Homepage</div>;
+  return <Rule />;
 };
 
 export default Homepage;

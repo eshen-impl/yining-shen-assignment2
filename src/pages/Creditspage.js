@@ -1,5 +1,11 @@
+import Author from "../components/Author";
+
 const Creditspage = () => {
-  return <div>Creditspage</div>;
+  return (
+    <div>
+      <Author />
+    </div>
+  );
 };
 
 export default Creditspage;

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { AppContext } from "../context/AppContext";
 import "../assets/styles/Bottombar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -29,10 +29,18 @@ const Bottombar = () => {
     } else {
       intervalId = setInterval(() => {
         dispatch({ type: "PROCEED" });
-      }, 1000);
+      }, 100);
       setIsAuto(true);
     }
   };
+
+  useEffect(() => {
+    return () => {
+      clearInterval(intervalId);
+      setIsAuto(false);
+    };
+  }, []);
+
   return (
     <div className="bottom-bar">
       <button id="restart" onClick={handleRestart}>

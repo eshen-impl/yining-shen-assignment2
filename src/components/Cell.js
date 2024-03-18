@@ -7,7 +7,7 @@ const Cell = (props) => {
       style={{ backgroundColor: props.bgColor }}
       onClick={props.handleClick}
     >
-      <span className="status">{props.status}</span>
+      {/* <span className="status">{props.status}</span> */}
     </div>
   );
 };

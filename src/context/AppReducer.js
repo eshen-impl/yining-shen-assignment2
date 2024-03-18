@@ -3,12 +3,7 @@ export const AppReducer = (state, action) => {
   let alive, count;
   switch (action.type) {
     case "CHG_SIZE":
-      alive = initGrid(
-        newBoard,
-        action.payload.height,
-        action.payload.width,
-        0.05
-      );
+      alive = initGrid(newBoard, action.payload.height, action.payload.width);
       console.log(newBoard);
 
       return {
@@ -38,7 +33,7 @@ export const AppReducer = (state, action) => {
       };
 
     case "RESTART":
-      alive = initGrid(newBoard, state.height, state.width, 0.05);
+      alive = initGrid(newBoard, state.height, state.width);
       console.log(newBoard);
 
       return {
@@ -98,22 +93,37 @@ export const AppReducer = (state, action) => {
   }
 };
 
-const initGrid = (grid, height, width, density) => {
+const initGrid = (grid, height, width, density = 0.1, clusterCount = 5) => {
+  const aliveCount = Math.max(3, Math.round(height * width * density));
+  const clusterSize = Math.round(aliveCount / clusterCount);
+
+  const clusters = [];
+  for (let i = 0; i < clusterCount; i++) {
+    const centerX = Math.floor(Math.random() * width);
+    const centerY = Math.floor(Math.random() * height);
+    for (let j = 0; j < clusterSize; j++) {
+      const offsetX = Math.floor(Math.random() * 9) - 4;
+      const offsetY = Math.floor(Math.random() * 9) - 4;
+      const x = Math.min(Math.max(0, centerX + offsetX), height - 1);
+      const y = Math.min(Math.max(0, centerY + offsetY), width - 1);
+      clusters.push([x, y]);
+    }
+  }
+
+  const clusterSet = new Set(clusters.map(JSON.stringify));
+
   for (let i = 0; i < height; i++) {
     grid.push([]);
     for (let j = 0; j < width; j++) {
-      grid[i].push(10);
+      if (clusterSet.has(JSON.stringify([i, j]))) {
+        grid[i][j] = 0;
+      } else {
+        grid[i][j] = 10;
+      }
     }
   }
-  const aliveSet = new Set();
-  const count = Math.max(3, Math.round(height * width * density));
-  for (let i = 0; i < count; i++) {
-    const randomRow = Math.floor(Math.random() * height);
-    const randomCol = Math.floor(Math.random() * width);
-    aliveSet.add("" + randomRow + randomCol);
-    grid[randomRow][randomCol] = 0;
-  }
-  return aliveSet.size;
+
+  return clusterSet.size;
 };
 
 const neighbors = (() => {
