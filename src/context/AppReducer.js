@@ -99,8 +99,8 @@ const initGrid = (grid, height, width, density = 0.1, clusterCount = 5) => {
 
   const clusters = [];
   for (let i = 0; i < clusterCount; i++) {
-    const centerX = Math.floor(Math.random() * width);
-    const centerY = Math.floor(Math.random() * height);
+    const centerX = Math.floor(Math.random() * height);
+    const centerY = Math.floor(Math.random() * width);
     for (let j = 0; j < clusterSize; j++) {
       const offsetX = Math.floor(Math.random() * 9) - 4;
       const offsetY = Math.floor(Math.random() * 9) - 4;
